@@ -1,2 +1,2 @@
 # Crud PHP and MySQL
-## Ejemplo de Faztweb
+## Example by Faztweb 

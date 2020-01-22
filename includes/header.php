@@ -17,5 +17,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php">CRUD php</a>
+            <div class="navbar-nav ml-auto">
+             <a class="nav-item nav-link active" href="https://github.com/jesus-khristian/crud-php-mysql">Click Here to see Code <span class="sr-only">(current)</span></a>
+           </div>
         </div>
     </nav>

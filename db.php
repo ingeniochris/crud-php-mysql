@@ -12,21 +12,14 @@ if(isset($conn)){
     echo 'DB is connected';
 }*/
 
-$url = getenv('JAWSDB_MARIA_URL');
-$dbparts = parse_url($url);
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$hostname = $dbparts['host'];
-$username = $dbparts['user'];
-$password = $dbparts['pass'];
-$database = ltrim($dbparts['path'],'/');
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-// Create connection
-$conn = new mysqli($hostname, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connection was successfully established!";
-
+$conn = new mysqli($server, $username, $password, $db);
+if(isset($conn)){
+    echo 'DB is connected';
 ?>

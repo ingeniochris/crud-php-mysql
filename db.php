@@ -21,6 +21,6 @@ $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
 if(isset($conn)){
-    echo 'DB is connected';
+  //  echo 'DB is connected';
 }
 ?>

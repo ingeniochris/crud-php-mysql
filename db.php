@@ -1,5 +1,6 @@
 <?php
     session_start();
+ //Conneccion localhost mysql
 /*$conn = mysqli_connect(
     'localhost',
     'khristian',
@@ -7,10 +8,12 @@
     'php_crud_mysql'
 );
 
-//Prueba para revisar conneccion a db
+Prueba para revisar conneccion a db
 if(isset($conn)){
     echo 'DB is connected';
 }*/
+
+
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 

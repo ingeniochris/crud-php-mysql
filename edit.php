@@ -1,5 +1,7 @@
 <?php
 include('db.php');
+include('save_task.php');
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $query = "SELECT * FROM task WHERE id = $id";
@@ -19,7 +21,11 @@ if(isset($_GET['id'])){
  if(isset($_POST['update'])){
      $title = $_POST['title'];
      $description = $_POST['description'];
-
+     if(validar($title,$description) == 1){
+        $_SESSION['message'] = 'Llene todos los campos';
+        $_SESSION['message_type'] = 'danger';
+       return  header('Location: index.php'); 
+       }
      $query = "UPDATE task SET title='$title' , description='$description' WHERE id= $id ";
      $result = mysqli_query($conn,$query);
 
@@ -29,7 +35,7 @@ if(isset($_GET['id'])){
 
      $_SESSION['message'] = 'Tarea actualizada';
      $_SESSION['message_type'] = 'info';
-     header('Location:index.php');
+    return header('Location:index.php');
  }
 ?>
 

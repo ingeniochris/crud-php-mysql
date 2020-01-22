@@ -1,2 +1,2 @@
 # Crud PHP and MySQL
-## Curso practico de FaztWeb
+## Ejemplo de Faztweb
